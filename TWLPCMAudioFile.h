@@ -8,16 +8,16 @@
 
 @import Foundation;
 
-#import <sndfile/sndfile.h>
+#import "sndfile.h"
 
 /**
- 
+
  A TWLPCMAudioFile represents a file on disk that is intended to be
  encoded with a TwoLAME encoder managed by a TWLEncoder object.
- 
+
  The properties of TWLPCMAudioFile instances are set when the object
  is created, and cannot be changed.
- 
+
  */
 
 @interface TWLPCMAudioFile : NSObject
