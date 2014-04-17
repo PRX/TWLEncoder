@@ -39,13 +39,13 @@
     
     // Open the file
     if (isRaw) {
-      _rawFile = fopen(self.fileURL.fileSystemRepresentation, "rb");
+      _rawFile = fopen(self.fileURL.path.fileSystemRepresentation, "rb");
       
       if (_rawFile == NULL) {
         *error = [NSError errorWithDomain:TWLEncoderErrorDomain code:TWLEncoderErrorCannotOpenFile userInfo:nil];
       }
     } else {
-      _sndfileFile = sf_open(self.fileURL.fileSystemRepresentation, SFM_READ, self.sndfileInfo);
+      _sndfileFile = sf_open(self.fileURL.path.fileSystemRepresentation, SFM_READ, self.sndfileInfo);
       
       if (self.sndfileFile == NULL) {
         *error = [NSError errorWithDomain:TWLEncoderErrorDomain code:TWLEncoderErrorUnsupportedAudio userInfo:nil];

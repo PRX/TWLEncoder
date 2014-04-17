@@ -256,7 +256,7 @@
 - (void)openOutputFile:(NSURL *)location {
   if (!self.isTaskCanceled && self.isExecuting) {
     self.outputFile = NULL;
-    self.outputFile = fopen(location.fileSystemRepresentation, "wb");
+    self.outputFile = fopen(location.path.fileSystemRepresentation, "wb");
     
     if (self.outputFile == NULL) {
       NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"Encoding was unsuccessful.",
